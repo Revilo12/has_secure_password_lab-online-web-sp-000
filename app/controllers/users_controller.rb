@@ -20,6 +20,6 @@ class UsersController < ApplicationController
 
   def passwords_match?
     binding.pry
-    params[:password] == params[:password_confirmation]
+    params[:user][:password] == params[:user][:password_confirmation]
   end
 end
