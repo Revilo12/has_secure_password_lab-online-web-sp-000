@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    if passowords_match?
+    if passwords_match?
       @user = User.create(user_params)
       login(@user)
     else
