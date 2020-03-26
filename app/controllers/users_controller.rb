@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     params.require('user').permit(:name, :password, :password_confirmation)
   end
 
-  def passowords_match?
+  def passwords_match?
     params[:password] == params[:password_confirmation]
   end
 end
