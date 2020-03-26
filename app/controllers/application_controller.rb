@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def login(user)
-    session[:name] = user.name
+    session[:user_id] = user.id
   end
 end
