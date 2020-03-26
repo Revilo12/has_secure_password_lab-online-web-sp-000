@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if params[:name]
-      user = User.find_or_create_by(name: params[:name])
-      session[:user_id] = user.id
+    @user = User.find_or_create_by(name: params[:name])
+    return head(:forbidden) unless @user.authenticate(params[:passowrd])
+    session[:user_id] = @user.id
     end
   end
 
