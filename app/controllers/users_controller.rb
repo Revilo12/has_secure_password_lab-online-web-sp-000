@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       @user = User.create(user_params)
       login(@user)
     else
-      redirect_to :new
+      redirect_to '/users/new'
     end
   end
 
