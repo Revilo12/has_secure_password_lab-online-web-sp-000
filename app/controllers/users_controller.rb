@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  def new
+  end
+
   def create
     if passowords_match?
       @user = User.create(user_params)
