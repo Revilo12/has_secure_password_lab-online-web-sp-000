@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by(name: params[:name])
     return head(:forbidden) unless @user.authenticate(params[:passowrd])
     session[:user_id] = @user.id
-    end
   end
 
   def destroy
